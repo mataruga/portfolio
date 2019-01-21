@@ -99,6 +99,7 @@
 <script>
 
     $(window).ready(function() {
+        window.scrollTo(0,1);
         w = $(window).width();
         h = $(window).height();
         if (w < h) {
@@ -119,14 +120,6 @@
             }
         });
     });
-
-	window.addEventListener("load",function() {
-	  // Set a timeout...
-	  setTimeout(function(){
-		// Hide the address bar!
-		window.scrollTo(0, 1);
-	  }, 0);
-	});
 
     function clip(a) {
         if (a == "mail") {
