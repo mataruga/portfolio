@@ -44,19 +44,19 @@
                     </div>
                 </div>
         </nav>
-        <div class="row no-gutters" style="height:18.75%">
+        <div class="row no-gutters" style="height:20%">
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
         </div>
-        <div class="row no-gutters" style="height:18.75%">
+        <div class="row no-gutters" style="height:20%">
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
         </div>
-        <div class="row no-gutters" style="height:18.75%">
+        <div class="row no-gutters" style="height:20%">
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
         </div>
-        <div class="row no-gutters" style="height:18.75%">
+        <div class="row no-gutters" style="height:20%">
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
         </div>
@@ -97,9 +97,15 @@
     </div>
 </body>
 <script>
-
+    window.addEventListener("load", function() {
+        setTimeout(function() {
+            var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollPos < 1) {
+                window.scrollTo(0, 1);
+            }
+        }, 0);
+    });
     $(window).ready(function() {
-        window.scrollTo(0,1);
         w = $(window).width();
         h = $(window).height();
         if (w < h) {
