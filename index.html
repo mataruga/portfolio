@@ -75,24 +75,24 @@
                     <div class="skills language arrow_box">Programming language</div>
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
-                    <div class="roles">Project leader</div>
-                    <div class="roles">Fullstack developer</div>
-                    <div class="roles">Game designer</div>
+                    <div class="roles pl">Project leader</div>
+                    <div class="roles fsd" onClick="highlight(this)">Fullstack developer</div>
+                    <div class="roles gd" onClick="highlight(this)">Game designer</div>
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
-                    <div class="softwares">Unity3D</div>
-                    <div class="softwares">Unreal Engine</div>
-                    <div class="softwares">GitHub</div>
+                    <div class="softwares unity">Unity3D</div>
+                    <div class="softwares unreal">Unreal Engine</div>
+                    <div class="softwares git">GitHub</div>
 
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
-                    <div class="languages">C#</div>
-                    <div class="languages">C++</div>
-                    <div class="languages">JavaScript</div>
+                    <div class="languages csharp">C#</div>
+                    <div class="languages cplus">C++</div>
+                    <div class="languages js">JavaScript</div>
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
-                    <div class="languages">Java</div>
-                    <div class="languages">Python</div>
+                    <div class="languages java" onClick="highlight(this)">Java</div>
+                    <div class="languages python">Python</div>
                 </div>
                 <!-- ================================================================================================================= -->
                 <div class="col-2 bgimg-dt" style="padding:0px;">
@@ -109,7 +109,7 @@
         </nav>
 
         <div class="row no-gutters" style="height:40%">
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj gd fsd java" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
@@ -124,6 +124,7 @@
     </div>
 </body>
 <script>
+
     $(window).ready(function() {
         w = $(window).width();
         h = $(window).height();
@@ -145,7 +146,7 @@
             }
         });
     });
-
+    var buttonsclicked = [];
     function clip(a) {
         if (a == "mail") {
             navigator.clipboard.writeText("danimataruga@gmail.com");
@@ -182,6 +183,53 @@
             returnsize(".languages");
             returnsize(".softwares");
         });
+
+    function highlight(name) {
+        //regex for class intersection
+        var n = "." + name.className;
+        var m = n.replace(" ", ".");
+        //Check if already clicked
+        if ($(m).css("background-color") != "rgb(83, 221, 108)") {
+            buttonsclicked.push(n);
+            greenlight(m);
+            $(".proj").each(function() {
+                if ($(this).hasClass(name.className.split(" ")[1])) {
+                    $(this).css({
+                        "opacity": "1"
+                    });
+                } else {
+                    $(this).css({
+                        "opacity": "0.5"
+                    });
+                }
+            });
+        } else {
+            buttonsclicked.pop(n);
+            if (m.includes("languages")) {
+                languagecol(m);
+            } else if (m.includes("roles")) {
+                rolecol(m);
+            } else {
+                softwarecol(m);
+            }
+            jQuery.each(buttonsclicked, function(i , val){
+                $(".proj").each(function() {
+                    if($(this).attr('class').includes(val.split(" ")[1])){
+                        $(this).css({ "opacity": "1"});
+                    }else{
+                        $(this).css({ "opacity": ".5"});
+                    }
+                });
+
+            });
+            if (buttonsclicked.length < 1){
+                $(".proj").each(function() {
+                        $(this).css({ "opacity": "1"});
+                });
+            }
+
+        }
+    }
 
 </script>
 
