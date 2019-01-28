@@ -5,6 +5,11 @@
 @bg-color: #E1E1E8;
 @border-color: #333836;
 
+body {
+overflow: -moz-scrollbars-vertical;
+overflow-x: hidden;
+overflow-y: hidden;
+}
 
 .bgimg-dt {
     background: url('../dani nobg.png');
@@ -140,4 +145,51 @@
     border-left-color: inherit;
     border-width: 1.25vh;
     margin-top: -1.25vh;
+}
+.projdetails{
+    display:none;
+    height:70%;
+    width:100%;
+    background-color: @bg-color;
+}
+
+#cat{
+    .projdetails;
+    background: url('../mkl2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+      background-position: center; 
+
+}
+#asteroids{
+    .projdetails;
+    background: url('../mkl.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+      background-position: center; 
+
+}
+#chess{
+    .projdetails;
+
+}
+#perception{
+    .projdetails;
+
+}
+#umbvrella{
+    .projdetails;
+
+}
+#zombies{
+    .projdetails;
+
+}
+#museum{
+    .projdetails;
+
+}
+#labs{
+    .projdetails;
+
 }

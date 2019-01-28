@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <!--Boostrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!--Boostrap -->
@@ -17,7 +18,7 @@
 
 </head>
 
-<body style="height:100%;position:absolute;display:flex;">
+<body style="height:100%;position:absolute;display:flex;background-color:#E1E1E8">
 
     <!-- MOBILE ======================================================
 ================================================================================-->
@@ -75,34 +76,34 @@
                     <div class="skills language arrow_box">Programming language</div>
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
-                    <div class="roles pl">Project leader</div>
+                    <div class="roles pl" onClick="highlight(this)">Project leader</div>
                     <div class="roles fsd" onClick="highlight(this)">Fullstack developer</div>
                     <div class="roles gd" onClick="highlight(this)">Game designer</div>
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
-                    <div class="softwares unity">Unity3D</div>
-                    <div class="softwares unreal">Unreal Engine</div>
-                    <div class="softwares git">GitHub</div>
+                    <div class="softwares unity" onClick="highlight(this)">Unity3D</div>
+                    <div class="softwares unreal" onClick="highlight(this)">Unreal Engine</div>
+                    <div class="softwares git" onClick="highlight(this)">GitHub</div>
 
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
-                    <div class="languages csharp">C#</div>
-                    <div class="languages cplus">C++</div>
-                    <div class="languages js">JavaScript</div>
+                    <div class="languages csharp" onClick="highlight(this)">C#</div>
+                    <div class="languages cplus" onClick="highlight(this)">C++</div>
+                    <div class="languages js" onClick="highlight(this)">JavaScript</div>
                 </div>
                 <div class="col-1" style="padding-top:1.5%;">
                     <div class="languages java" onClick="highlight(this)">Java</div>
-                    <div class="languages python">Python</div>
-                    <p class="degree">- M.Sc.Eng. Computer Science KTH</p>
-                    <p class="degree" style="margin-left:3vw">- M.Sc. Interactive Media Technology KTH</p>
+                    <div class="languages python" onClick="highlight(this)">Python</div>
+                    <p class="degree" onClick="highlight(this)">- M.Sc.Eng. Computer Science KTH</p>
+                    <p class="degree" style="margin-left:3vw" onClick="highlight(this)">- M.Sc. Interactive Media Technology KTH</p>
                 </div>
 
-                <!-- ================================================================================================================= -->
+                <!-- ==============================ICONS======================================================================== -->
                 <div class="col-2 bgimg-dt" style="padding:0px;">
 
                     <div class="float-right" style="font-size:1.8vh;padding-top:3vh;padding-right:1.7vh">
-                        <a href="#"><i class="fab fa-facebook fa-2x icons" style="padding-bottom:1vh"></i></a><br>
-                        <a href="#"><i class="fab fa-linkedin fa-2x icons" style="padding-bottom:1vh"></i></a><br>
+                        <a href="https://www.facebook.com/dani.mataruga"><i class="fab fa-facebook fa-2x icons" style="padding-bottom:1vh"></i></a><br>
+                        <a href="https://www.linkedin.com/in/dani-mataruga-44a65b109/"><i class="fab fa-linkedin fa-2x icons" style="padding-bottom:1vh"></i></a><br>
                         <a tabindex="0" onClick="clip('mail')" href="#" data-style="primary" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Email copied to clipboard"><i class="fas fa-envelope-square fa-2x icons" style="padding-bottom:1vh"></i></a>
 
 
@@ -111,24 +112,76 @@
             </div>
         </nav>
 
-        <div class="row no-gutters" style="height:40%">
-            <div class="col proj gd fsd java" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+        <!--=======================DEFAULT PROJECT GRID==========================-->
+        <!--===================================================================-->
+        <div class="row no-gutters" id="keep1" style="height:40%;width:100%">
+            <div class="col proj gd fsd java" style="padding:0px"><img class="img-responsive" onClick="collapsedbanner('asteroids')" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj pl js python git" style="padding:0px"><img class="img-responsive" onClick="collapsedbanner('cat')" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj fsd gd pl python" style="padding:0px"><img class="img-responsive" onClick="collapsedbanner('chess')" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj unity gd pl csharp" style="padding:0px"><img class="img-responsive" onClick="collapsedbanner('perception')" src="dani.png" width="100%" height="100%"></img></div>
         </div>
-        <div class="row no-gutters" style="height:40%">
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
-            <div class="col proj" style="padding:0px"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+        <div class="row no-gutters" id="keep2" style="height:40%;width:100%">
+            <div class="col proj gd pl fsd git unreal cplus" style="padding:0px;"><img class="img-responsive" onClick="collapsedbanner('umbvrella')" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj fsd gd git unity csharp" style="padding:0px"><img class="img-responsive" onClick="collapsedbanner('zombies')" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj fsd gd pl unity csharp" style="padding:0px"><img class="img-responsive" onClick="collapsedbanner('museum')" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj python java fsd" style="padding:0px"><img class="img-responsive" onClick="collapsedbanner('labs')" src="dani.png" width="100%" height="100%"></img></div>
+        </div>
+        <!--===================================================================-->
+        <!--===================================================================-->
+        <!--======================COLLAPSED PROJECT BANNER==========================-->
+        <!--===================================================================-->
+        <div class="row no-gutters" id="hide1" style="height:10%;width:100%">
+
+            <div class="col proj gd fsd java" style="padding:0px" onClick="switchproj('asteroids')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj pl js python git" style="padding:0px" onClick="switchproj('cat')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj fsd gd pl python" style="padding:0px" onClick="switchproj('chess')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj unity gd pl csharp" style="padding:0px" onClick="switchproj('perception')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj gd pl fsd git unreal cplus" style="padding:0px;" onClick="switchproj('umbvrella')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj fsd git unity csharp" style="padding:0px" onClick="switchproj('zombies')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj fsd gd pl unity csharp" style="padding:0px" onClick="switchproj('museum')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj python java fsd" style="padding:0px" onClick="switchproj('labs')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+        </div>
+        <!--===================================================================-->
+        <!--===================================================================-->
+
+        <!--======================= PROJECT DETAILS============================-->
+        <!--===================================================================-->
+        <div class="row no-gutters projdetails" id="cat">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('cat')"></i></a></div>
+        </div>
+        <div class="row no-gutters projdetails" id="asteroids">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('asteroids')"></i></a></div>
+        </div>
+        <div class="row no-gutters projdetails" id="chess">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('chess')"></i></a></div>
+        </div>
+        <div class="row no-gutters projdetails" id="perception">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('perception')"></i></a></div>
+        </div>
+        <div class="row no-gutters projdetails" id="umbvrella">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('umbvrella')"></i></a></div>
+        </div>
+        <div class="row no-gutters projdetails" id="zombies">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('zombies')"></i></a></div>
+        </div>
+        <div class="row no-gutters projdetails" id="museum">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('museum')"></i></a></div>
+        </div>
+        <div class="row no-gutters projdetails" id="labs">
+            <div class="float-right"><a href="#"><i class="fas fa-window-close fa-2x" style="margin: 2vw" onClick="collapsedbanner('labs')"></i></a></div>
         </div>
 
+
+        <!--===================================================================-->
+        <!--===================================================================-->
     </div>
+
 </body>
 <script>
-
     $(window).ready(function() {
+        // jQuery.fx.off = true;
+        $("#hide1").hide();
+
         w = $(window).width();
         h = $(window).height();
         if (w < h) {
@@ -149,7 +202,9 @@
             }
         });
     });
+
     var buttonsclicked = [];
+
     function clip(a) {
         if (a == "mail") {
             navigator.clipboard.writeText("danimataruga@gmail.com");
@@ -215,19 +270,25 @@
             } else {
                 softwarecol(m);
             }
-            jQuery.each(buttonsclicked, function(i , val){
+            jQuery.each(buttonsclicked, function(i, val) {
                 $(".proj").each(function() {
-                    if($(this).attr('class').includes(val.split(" ")[1])){
-                        $(this).css({ "opacity": "1"});
-                    }else{
-                        $(this).css({ "opacity": ".5"});
+                    if ($(this).attr('class').includes(val.split(" ")[1])) {
+                        $(this).css({
+                            "opacity": "1"
+                        });
+                    } else {
+                        $(this).css({
+                            "opacity": ".5"
+                        });
                     }
                 });
 
             });
-            if (buttonsclicked.length < 1){
+            if (buttonsclicked.length < 1) {
                 $(".proj").each(function() {
-                        $(this).css({ "opacity": "1"});
+                    $(this).css({
+                        "opacity": "1"
+                    });
                 });
             }
 
