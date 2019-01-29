@@ -137,7 +137,7 @@
             <div class="col proj fsd gd pl python" style="padding:0px" onClick="switchproj('chess')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col proj unity gd pl csharp" style="padding:0px" onClick="switchproj('perception')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col proj gd pl fsd git unreal cplus" style="padding:0px;" onClick="switchproj('umbvrella')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
-            <div class="col proj fsd git unity csharp" style="padding:0px" onClick="switchproj('zombies')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
+            <div class="col proj fsd gd git unity csharp" style="padding:0px" onClick="switchproj('zombies')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col proj fsd gd pl unity csharp" style="padding:0px" onClick="switchproj('museum')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
             <div class="col proj python java fsd" style="padding:0px" onClick="switchproj('labs')"><img class="img-responsive" src="dani.png" width="100%" height="100%"></img></div>
         </div>
@@ -203,7 +203,7 @@
         });
     });
 
-    var buttonsclicked = [];
+
 
     function clip(a) {
         if (a == "mail") {
@@ -242,58 +242,7 @@
             returnsize(".softwares");
         });
 
-    function highlight(name) {
-        //regex for class intersection
-        var n = "." + name.className;
-        var m = n.replace(" ", ".");
-        //Check if already clicked
-        if ($(m).css("background-color") != "rgb(83, 221, 108)") {
-            buttonsclicked.push(n);
-            greenlight(m);
-            $(".proj").each(function() {
-                if ($(this).hasClass(name.className.split(" ")[1])) {
-                    $(this).css({
-                        "opacity": "1"
-                    });
-                } else {
-                    $(this).css({
-                        "opacity": "0.5"
-                    });
-                }
-            });
-        } else {
-            buttonsclicked.pop(n);
-            if (m.includes("languages")) {
-                languagecol(m);
-            } else if (m.includes("roles")) {
-                rolecol(m);
-            } else {
-                softwarecol(m);
-            }
-            jQuery.each(buttonsclicked, function(i, val) {
-                $(".proj").each(function() {
-                    if ($(this).attr('class').includes(val.split(" ")[1])) {
-                        $(this).css({
-                            "opacity": "1"
-                        });
-                    } else {
-                        $(this).css({
-                            "opacity": ".5"
-                        });
-                    }
-                });
 
-            });
-            if (buttonsclicked.length < 1) {
-                $(".proj").each(function() {
-                    $(this).css({
-                        "opacity": "1"
-                    });
-                });
-            }
-
-        }
-    }
 
 </script>
 
