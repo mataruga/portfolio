@@ -6,20 +6,20 @@
 @border-color: #333836;
 
 body {
-overflow: -moz-scrollbars-vertical;
-overflow-x: hidden;
-overflow-y: hidden;
+    overflow: -moz-scrollbars-vertical;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .bgimg-dt {
-    background: url('../dani nobg.png');
+    background: url('../images/dani nobg.png');
     background-repeat: no-repeat;
     background-size: 20vh 20vh;
     background-position: right;
 }
 
 .bgimg-mob {
-    background: url('../dani nobg.png');
+    background: url('../images/dani nobg.png');
     background-repeat: no-repeat;
     background-size: 12.5vh 12.5vh;
     background-position: bottom right;
@@ -44,15 +44,20 @@ overflow-y: hidden;
     border-radius: 3px;
     display: block;
 }
-.skills:hover{
-       -webkit-font-smoothing:subpixel-antialiased;transform:perspective(1px) translateZ(0);-webkit-transition-duration:.1s;-webkit-transform:scale(1.2);transform:scale(1.2);
+
+.skills:hover {
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: .1s;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
-.degree{
+.degree {
     width: 18vw;
     font-size: .9vw;
     margin-top: .5vw;
-    margin-left:2vw;
+    margin-left: 2vw;
 }
 
 .role {
@@ -69,7 +74,7 @@ overflow-y: hidden;
 
 .roles:hover {
     cursor: pointer !important;
-    opacity: 0.6 !important;
+    opacity: 0.7 !important;
 }
 
 .language {
@@ -98,7 +103,7 @@ overflow-y: hidden;
 
 .softwares {
     .software;
-    .skills;  
+    .skills;
 }
 
 .softwares:hover {
@@ -146,50 +151,68 @@ overflow-y: hidden;
     border-width: 1.25vh;
     margin-top: -1.25vh;
 }
-.projdetails{
-    display:none;
-    height:70%;
-    width:100%;
+
+.projdetails {
+    display: none;
+    height: 70%;
+    width: 100%;
     background-color: @bg-color;
 }
 
-#cat{
+#cat {
     .projdetails;
-    background: url('../mkl2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-      background-position: center; 
+    background-color: @bg-color;
 
 }
-#asteroids{
+
+#asteroids {
     .projdetails;
-    background: url('../mkl.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-      background-position: center; 
+    background-color: @bg-color;
 
 }
-#chess{
+
+#chess {
     .projdetails;
 
 }
-#perception{
+
+#perception {
     .projdetails;
 
 }
-#umbvrella{
+
+#umbvrella {
     .projdetails;
 
 }
-#zombies{
+
+#zombies {
     .projdetails;
 
 }
-#museum{
+
+#museum {
     .projdetails;
 
 }
-#labs{
+
+#labs {
     .projdetails;
 
+}
+
+.projtitle {
+    font-size: 6vh;
+    text-decoration: underline;
+    margin-bottom: 5%;
+}
+
+.projdesc {
+    font-size: 2.5vh
+}
+
+.projcont {
+    margin-left: 2%;
+    font-style: italic;
+    font-size: 1.5vh;
 }

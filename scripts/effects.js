@@ -121,7 +121,7 @@ function highlight(name) {
         $(".proj").each(function () {
             if (!$(this).hasClass(name.className.split(" ")[1])) {
                 $(this).css({
-                    "opacity": ".5"
+                    "opacity": ".05"
                 });
             }
         });
@@ -145,7 +145,7 @@ function highlight(name) {
                         });
                     } else {
                         $(this).css({
-                            "opacity": ".5"
+                            "opacity": ".05"
                         });
 
                     }
@@ -193,21 +193,3 @@ function highlight(name) {
         }
     }
 
-    /*
-                jQuery.each(buttonsclicked, function(i, val) {
-                    $(".proj").each(function() {
-                        console.log("i: "+i);
-                        console.log("val: "+val);
-                        if ($(this).attr('class').includes(val)) {
-                            $(this).css({
-                                "opacity": "1"
-                            });
-                        } else {
-                            $(this).css({
-                                "opacity": ".5"
-                            });
-                        }
-                    });
-
-                });
-    */
