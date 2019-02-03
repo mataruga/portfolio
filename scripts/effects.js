@@ -70,7 +70,7 @@ function collapsedbanner(project) {
 }
 
 function switchproj(project) {
-    var speed = 100;
+    var speed = "fast";
     currentproj = "div#" + latest;
 
 
