@@ -135,61 +135,123 @@ function highlight(name) {
             softwarecol(m);
         }
         jQuery.each(buttonsclicked, function (i, val) {
-            filter += "."+val;
+            filter += "." + val;
         });
         filter = $.trim(filter);
         $(".proj").each(function () {
-                if ($(this).is(filter)) {
-                        $(this).css({
-                            "opacity": "1"
-                        });
-                    } else {
-                        $(this).css({
-                            "opacity": ".05"
-                        });
+            if ($(this).is(filter)) {
+                $(this).css({
+                    "opacity": "1"
+                });
+            } else {
+                $(this).css({
+                    "opacity": ".05"
+                });
 
-                    }
-                });
-            if (buttonsclicked.length < 1) {
-                $(".proj").each(function () {
-                    $(this).css({
-                        "opacity": "1"
-                    });
-                });
             }
+        });
+        if (buttonsclicked.length < 1) {
+            $(".proj").each(function () {
+                $(this).css({
+                    "opacity": "1"
+                });
+            });
+        }
 
+    }
+}
+
+function greenlight(element) {
+    $(element).css({
+        "background": "#53DD6C"
+    });
+}
+
+function languagecol(element) {
+    $(element).css({
+        "background": "#383D3B"
+    });
+}
+
+function rolecol(element) {
+    $(element).css({
+        "background": "#5C605E"
+    });
+}
+
+function softwarecol(element) {
+    $(element).css({
+        "background": "#4A4E4C"
+    });
+}
+
+function removeElement(array, element) {
+    for (var i = array.length - 1; i >= 0; i--) {
+        if (array[i] == element) {
+            array.splice(i, 1);
         }
     }
+}
 
-    function greenlight(element) {
-        $(element).css({
-            "background": "#53DD6C"
-        });
+function clip(a) {
+    if (a == "mail") {
+        navigator.clipboard.writeText("danimataruga@gmail.com");
     }
 
-    function languagecol(element) {
-        $(element).css({
-            "background": "#383D3B"
-        });
-    }
+}
+$(function () {
+    // Popover for mail
+    $('[data-toggle="popover"]').popover()
 
-    function rolecol(element) {
-        $(element).css({
-            "background": "#5C605E"
+    // Handle shrink/resize of skills hover
+    $(".role").hover(function () {
+            shrink(".languages");
+            shrink(".softwares");
+        },
+        function () {
+            returnsize(".roles");
+            returnsize(".languages");
+            returnsize(".softwares");
         });
-    }
-
-    function softwarecol(element) {
-        $(element).css({
-            "background": "#4A4E4C"
+    $(".language").hover(function () {
+            shrink(".softwares");
+            shrink(".roles");
+        },
+        function () {
+            returnsize(".roles");
+            returnsize(".languages");
+            returnsize(".softwares");
         });
-    }
+    $(".software").hover(function () {
+            shrink(".languages");
+            shrink(".roles");
+        },
+        function () {
+            returnsize(".roles");
+            returnsize(".languages");
+            returnsize(".softwares");
+        });
 
-    function removeElement(array, element) {
-        for (var i = array.length - 1; i >= 0; i--) {
-            if (array[i] == element) {
-                array.splice(i, 1);
-            }
+    $('#graphcarousel').on('slid.bs.carousel', function (e) {
+
+        console.log(e.to);
+        switch (e.to) {
+            case 0:
+                $('#gtitle').html("Reduction of Graph Coloring");
+                $('#gdesc').html("Reduction of Graph Coloring");
+                break;
+            case 1:
+                $('#gtitle').html("Reduction of Bipartite-match to Flow");
+                $('#gdesc').html("Reduction of Bipartite-match to Flow");
+                break;
+            case 2:
+                $('#gtitle').html("Maximum Flow");
+                $('#gdesc').html("Maximum Flow");
+                break;
+                case 3:
+                $('#gtitle').html("Heuristic Approach of Vertex Cover");
+                $('#gdesc').html("Heuristic Approach of Vertex Cover");
+                break;
         }
-    }
-
+    });
+});
